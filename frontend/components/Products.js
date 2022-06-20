@@ -10,7 +10,6 @@ export default function Products({ product }) {
       </div>
       <h2>{title}</h2>
       <h3>{price}</h3>
-      <p>{description}</p>
     </ProductStyle>
   );
 }
