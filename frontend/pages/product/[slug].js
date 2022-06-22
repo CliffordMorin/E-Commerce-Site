@@ -13,12 +13,25 @@ import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
   //Use StateContext to get the qty
-  const { qty, setQty, increaseQty, decreaseQty } = useStateContext();
+  const {
+    qty,
+    setQty,
+    increaseQty,
+    decreaseQty,
+    showCart,
+    cartItems,
+    setShowCart,
+    setCartItems,
+    addToCart,
+  } = useStateContext();
 
   //Reset qty counter for each product on page load
-  useEffect(() => {
+  const resetQuantity = () => {
     setQty(1);
-  }, [setQty]);
+  };
+  useEffect(() => {
+    resetQuantity();
+  }, []);
 
   //Fetch Slug from the url
   const { query } = useRouter();
@@ -39,6 +52,7 @@ export default function ProductDetails() {
   //Extract Data from the GraphQL data
   const { title, description, price, image, slug } =
     data.products.data[0].attributes;
+  console.log(data.products.data[0].attributes);
 
   return (
     <DetailsStyle>
@@ -56,7 +70,9 @@ export default function ProductDetails() {
             <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
-        <Buy>Add to cart</Buy>
+        <Buy onClick={() => addToCart(data.products.data[0].attributes, qty)}>
+          Add to cart
+        </Buy>
       </ProductInfo>
     </DetailsStyle>
   );
