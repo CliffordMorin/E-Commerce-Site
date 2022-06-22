@@ -51,7 +51,7 @@ export default function Cart() {
           })}
         {cartItems.length >= 1 && (
           <Checkout>
-            <h3>Subtotal: ${totalPrice}</h3>
+            <h3>Subtotal: ${totalPrice.toFixed(2)}</h3>
             <button>Purchase</button>
           </Checkout>
         )}
