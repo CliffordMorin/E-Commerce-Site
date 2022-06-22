@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useRouter } from "next/router";
@@ -8,8 +9,17 @@ import {
   Buy,
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
+  //Use StateContext to get the qty
+  const { qty, setQty, increaseQty, decreaseQty } = useStateContext();
+
+  //Reset qty counter for each product on page load
+  useEffect(() => {
+    setQty(1);
+  }, [setQty]);
+
   //Fetch Slug from the url
   const { query } = useRouter();
 
@@ -29,7 +39,6 @@ export default function ProductDetails() {
   //Extract Data from the GraphQL data
   const { title, description, price, image, slug } =
     data.products.data[0].attributes;
-  console.log(image.data.attributes.formats.small);
 
   return (
     <DetailsStyle>
@@ -40,11 +49,11 @@ export default function ProductDetails() {
         <Quantity>
           <span>Quantity</span>
           <button>
-            <AiFillMinusCircle />
+            <AiFillMinusCircle onClick={decreaseQty} />
           </button>
-          <p>0</p>
+          <p>{qty}</p>
           <button>
-            <AiFillPlusCircle />
+            <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
         <Buy>Add to cart</Buy>
