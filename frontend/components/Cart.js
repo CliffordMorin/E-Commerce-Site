@@ -12,7 +12,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 
 export default function Cart() {
-  const { cartItems, setShowCart, addToCart, removeFromCart } =
+  const { cartItems, setShowCart, addToCart, removeFromCart, totalPrice } =
     useStateContext();
 
   return (
@@ -34,7 +34,7 @@ export default function Cart() {
                 />
                 <CardInfo>
                   <h3>{item.title}</h3>
-                  <h3>{item.price}</h3>
+                  <h3>${item.price}</h3>
                   <Quantity>
                     <span>Quantity</span>
                     <button>
@@ -49,6 +49,12 @@ export default function Cart() {
               </Card>
             );
           })}
+        {cartItems.length >= 1 && (
+          <Checkout>
+            <h3>Subtotal: ${totalPrice}</h3>
+            <button>Purchase</button>
+          </Checkout>
+        )}
       </CartStyle>
     </CartWrapper>
   );
