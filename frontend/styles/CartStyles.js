@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//Animation
+//import framer-motion, need to import differently with next.js
 const { motion } = require("framer-motion");
 
 export const CartWrapper = styled(motion.div)`
@@ -48,7 +48,6 @@ export const EmptyStyle = styled(motion.div)`
   /* For the empty cart */
   position: absolute;
   top: 0;
-  /*  */
   display: flex;
   flex-direction: column;
   align-items: center;
