@@ -70,3 +70,5 @@ export const Checkout = styled(motion.div)`
     cursor: pointer;
   }
 `;
+
+export const Cards = styled(motion.div)``;
