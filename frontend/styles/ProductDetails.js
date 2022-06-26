@@ -30,6 +30,7 @@ export const Quantity = styled.div`
     display: flex;
     font-size: 1.5rem;
     padding: 0rem 0.5rem;
+    cursor: pointer;
   }
   p {
     width: 1rem;

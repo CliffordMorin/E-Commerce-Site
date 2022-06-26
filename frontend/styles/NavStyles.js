@@ -16,6 +16,7 @@ export const NavItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   div {
     margin-left: 3rem;
     position: relative;
@@ -29,6 +30,7 @@ export const NavItems = styled.div`
     padding: 0.25rem;
   }
   svg {
+    cursor: pointer;
     font-size: 1.5rem;
   }
   span {
