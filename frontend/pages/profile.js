@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
+import formatMoney from "../lib/formatMoney";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -25,9 +26,15 @@ export default function Profile({ user, orders }) {
         <div>
           {orders.map((order) => (
             <Order key={order.id}>
-              <h1>Order Number: {order.id}</h1>
-              <h2>Amount: {order.amount}</h2>
-              <h2>Receipt Email: {user.email}</h2>
+              <h1>
+                Order Number: <span>{order.id}</span>
+              </h1>
+              <h2>
+                Amount: <span>{formatMoney(order.amount)}</span>
+              </h2>
+              <h2>
+                Receipt Email: <span> {user.email}</span>
+              </h2>
             </Order>
           ))}
         </div>
@@ -51,6 +58,9 @@ const Order = styled.div`
   h2 {
     font-size: 1rem;
     color: var(--secondary);
+  }
+  span {
+    font-weight: 300;
   }
 `;
 
