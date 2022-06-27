@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import orderConfirmation from "../public/orderConfirmation.svg";
 import styled from "styled-components";
+import formatMoney from "../lib/formatMoney";
 
 const { motion } = require("framer-motion");
 
@@ -52,7 +53,7 @@ export default function Success({ order }) {
               <div key={item.id}>
                 <p>Product: {item.description}</p>
                 <p>Quantity: {item.quantity}</p>
-                <p>Price: {item.price.unit_amount}</p>
+                <p>Price: {formatMoney(item.price.unit_amount)}</p>
               </div>
             ))}
           </OrderInfo>
