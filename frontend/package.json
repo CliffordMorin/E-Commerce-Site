@@ -24,6 +24,7 @@
     "urql": "^2.2.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6"
   }
