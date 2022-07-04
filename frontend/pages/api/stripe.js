@@ -8,9 +8,7 @@ export default async function handler(req, res) {
   if (user) {
     // const stripeId = user["http://localhost:3000/stripe_customer_id"];
     const stripeId =
-      user[
-        "https://e-commerce-site-20hy81pme-cliffordmorin.vercel.app//stripe_customer_id"
-      ];
+      user["https://e-commerce-site-tawny.vercel.app/stripe_customer_id"];
 
     if (req.method === "POST") {
       try {
