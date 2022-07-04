@@ -6,8 +6,8 @@ export default async function handler(req, res) {
   const getUser = await getSession(req, res);
   const user = getUser?.user;
   if (user) {
-    // const stripeId = user["http://localhost:3000/stripe_customer_id"];
-    const stripeId = user[`${process.env.BASE_URL}/stripe_customer_id`];
+    const stripeId = user["http://localhost:3000/stripe_customer_id"];
+    // const stripeId = user[`${process.env.BASE_URL}/stripe_customer_id`];
 
     if (req.method === "POST") {
       try {
