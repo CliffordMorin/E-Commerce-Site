@@ -6,9 +6,9 @@ export default async function handler(req, res) {
   const getUser = await getSession(req, res);
   const user = getUser?.user;
   if (user) {
-    const stripeId = user["http://localhost:3000/stripe_customer_id"];
-    // const stripeId = user[`${process.env.BASE_URL}/stripe_customer_id`];
-
+    // const stripeId = user["http://localhost:3000/stripe_customer_id"];
+    const stripeId = user[`${process.env.BASE_URL}/stripe_customer_id`];
+    console.log(stripeId);
     if (req.method === "POST") {
       try {
         //CREATE CHECKOUT SESSION from body params
@@ -107,5 +107,4 @@ export default async function handler(req, res) {
       res.status(405).end("Method Not Allowed");
     }
   }
-  console.log(stripeId);
 }
