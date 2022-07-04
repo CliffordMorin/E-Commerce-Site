@@ -7,8 +7,7 @@ import formatMoney from "../lib/formatMoney";
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
     const session = getSession(ctx.req, ctx.res);
-    const stripeId =
-      session.user[`${process.env.BASE + URL}/stripe+customer_id`];
+    const stripeId = session.user[`${process.env.BASE_URL}/stripe_customer_id`];
     const paymentIntents = await stripe.paymentIntents.list({
       customer: stripeId,
     });

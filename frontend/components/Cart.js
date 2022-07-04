@@ -35,8 +35,8 @@ export default function Cart() {
     useStateContext();
 
   //Payment Stripe
-  const handleCheckout = async (e, setError, setLoading, setSuccess) => {
-    const stripe = await getStripe();
+  const handleCheckout = async () => {
+    const stripePromise = await getStripe();
     const res = await fetch("/api/stripe", {
       method: "POST",
       headers: {
@@ -47,7 +47,7 @@ export default function Cart() {
     });
     const data = await res.json();
     console.log(data);
-    await stripe.redirectToCheckout({ sessionId: data.id });
+    await stripePromise.redirectToCheckout({ sessionId: data.id });
   };
 
   return (
