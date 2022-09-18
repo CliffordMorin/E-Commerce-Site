@@ -18,15 +18,14 @@ export const ExitOut = styled(motion.div)`
   height: 60px;
   width: 60px;
   z-index: 100;
-  background-color: none;
   border-radius: 5px;
   position: relative;
-  right: 70px;
+  right: 15px;
   bottom: 25px;
 
   svg {
     font-size: 3rem;
-    color: #535353;
+    color: var(--secondary);
     position: relative;
     top: 6px;
     left: 6px;
@@ -36,7 +35,7 @@ export const ExitOut = styled(motion.div)`
 export const CartStyle = styled(motion.div)`
   width: 30%;
   background: #f1f1f1;
-  padding: 2rem 5rem;
+  padding: 2rem 1rem;
   overflow-y: scroll;
   position: relative;
 
@@ -52,7 +51,6 @@ export const Card = styled(motion.div)`
   border-radius: 1rem;
   overflow: hidden;
   background: white;
-  padding: 2rem;
   margin: 2rem 0rem;
   img {
     width: 8rem;
