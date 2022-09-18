@@ -7,9 +7,11 @@ import {
   EmptyStyle,
   Checkout,
   Cards,
+  ExitOut,
 } from "../styles/CartStyles.js";
 import { Quantity } from "../styles/ProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import getStripe from "../lib/getStripe.js";
 
@@ -80,6 +82,9 @@ export default function Cart() {
         }}
         onClick={(e) => e.stopPropagation()}
       >
+        <ExitOut onClick={() => setShowCart(false)}>
+          <IoClose />
+        </ExitOut>
         {cartItems.length < 1 && (
           <EmptyStyle
             initial={{

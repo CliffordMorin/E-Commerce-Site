@@ -14,6 +14,25 @@ export const CartWrapper = styled(motion.div)`
   justify-content: flex-end;
 `;
 
+export const ExitOut = styled(motion.div)`
+  height: 60px;
+  width: 60px;
+  z-index: 100;
+  background-color: none;
+  border-radius: 5px;
+  position: relative;
+  right: 70px;
+  bottom: 25px;
+
+  svg {
+    font-size: 3rem;
+    color: #535353;
+    position: relative;
+    top: 6px;
+    left: 6px;
+  }
+`;
+
 export const CartStyle = styled(motion.div)`
   width: 30%;
   background: #f1f1f1;
@@ -22,7 +41,7 @@ export const CartStyle = styled(motion.div)`
   position: relative;
 
   @media (max-width: 768px) {
-    width: 70%;
+    width: 100%;
   }
 `;
 
