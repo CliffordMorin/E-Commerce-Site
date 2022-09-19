@@ -7,6 +7,16 @@ export const DetailsStyle = styled.div`
   img {
     width: 40%;
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -16,6 +26,10 @@ export const ProductInfo = styled.div`
     font-weight: medium;
     padding: 0.5rem 1rem;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 1rem;
   }
 `;
 

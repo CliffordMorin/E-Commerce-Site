@@ -47,7 +47,7 @@ export const CartStyle = styled(motion.div)`
 export const Card = styled(motion.div)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-radius: 1rem;
   overflow: hidden;
   background: white;
