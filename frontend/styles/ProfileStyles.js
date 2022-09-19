@@ -18,6 +18,17 @@ export const Order = styled.div`
   span {
     font-weight: 300;
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    h1 {
+      font-size: 0.8rem;
+    }
+    h2 {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`

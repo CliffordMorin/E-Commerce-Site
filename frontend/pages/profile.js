@@ -3,6 +3,7 @@ const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import formatMoney from "../lib/formatMoney";
+import formatTimeStamp from "../lib/formatTimeStamp";
 import { Wrapper, Order } from "../styles/ProfileStyles";
 
 export const getServerSideProps = withPageAuthRequired({
@@ -26,6 +27,9 @@ export default function Profile({ user, orders }) {
         <div>
           {orders.map((order) => (
             <Order key={order.id}>
+              <h1>
+                Date Ordered: <span>{formatTimeStamp(order.created)}</span>
+              </h1>
               <h1>
                 Order Number: <span>{order.id}</span>
               </h1>
