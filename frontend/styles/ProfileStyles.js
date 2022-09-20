@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Order = styled.div`
-  background: white;
+  background: var(--card-background);
   margin: 2rem 0rem;
   padding: 3rem;
   display: flex;
@@ -13,7 +13,6 @@ export const Order = styled.div`
   }
   h2 {
     font-size: 1rem;
-    color: var(--secondary);
   }
   span {
     font-weight: 300;

@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
   --background-color: ${(props) => props.theme["--background-color"]};
   --primary: ${(props) => props.theme["--primary"]};
   --secondary: ${(props) => props.theme["--secondary"]};
+  --card-background: ${(props) => props.theme["--card-background"]};
+  --text-color: ${(props) => props.theme["--text-color"]};
+  --text-color-light: ${(props) => props.theme["--text-color-light"]};
+  ---text-color-dark: ${(props) => props.theme["--text-color-dark"]};
 }
 
 html,
@@ -17,7 +21,9 @@ body {
   background: var(--background-color);
   transition: all .5s ease;
 }
-
+h1{
+  color: var()
+}
 h2 {
   font-size: 1.2rem;
   color: var(--primary);
@@ -33,6 +39,7 @@ h3 {
 a {
   color: inherit;
   text-decoration: none;
+  color: var(--primary);
 }
 
 * {
@@ -41,8 +48,14 @@ a {
   margin: 0;
 }
 
+button{
+  background: var(--card-background);
+  color: var(--primary);
+}
+
 p {
   line-height: 150%;
+  color: var(--primary);
 }
 `;
 

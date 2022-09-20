@@ -61,7 +61,7 @@ export default function ProductDetails() {
     <DetailsStyle>
       <img src={image.data.attributes.formats.small.url} alt={title} />
       <ProductInfo>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>{description}</p>
         <Quantity>
           <span>Quantity</span>

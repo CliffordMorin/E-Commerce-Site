@@ -1,27 +1,21 @@
 const darkTheme = {
-  "--background-color": "#26314B",
+  "--background-color": "#26314b",
   "--primary": "#fff",
   "--secondary": "#ccc",
-  "--text-color": "#fff",
-  "--text-color-light": "#ccc",
+  "--card-background": "#20293e",
+  "--text-color": "#ccc",
+  "--text-color-light": "#fff",
   "--text-color-dark": "#000",
-  "--text-color-lighter": "#eee",
-  "--text-color-darker": "#333",
-  "--text-color-lightest": "#f5f5f5",
-  "--text-color-darkest": "#222",
 };
 
 const lightTheme = {
   "--background-color": "#C0DAB3",
   "--primary": "#2d2d2d",
   "--secondary": "#535353",
+  "--card-background": "#a9c09e",
   "--text-color": "#000",
-  "--text-color-light": "#ccc",
+  "--text-color-light": "#000",
   "--text-color-dark": "#000",
-  "--text-color-lighter": "#eee",
-  "--text-color-darker": "#333",
-  "--text-color-lightest": "#f5f5f5",
-  "--text-color-darkest": "#222",
 };
 
 const themes = {

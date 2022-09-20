@@ -6,7 +6,7 @@ export const NavStyles = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  color: #303030;
+  color: var(--text-color-light);
   a {
     font-size: 1.2rem;
   }

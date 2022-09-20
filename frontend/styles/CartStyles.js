@@ -34,7 +34,7 @@ export const ExitOut = styled(motion.div)`
 
 export const CartStyle = styled(motion.div)`
   width: 30%;
-  background: #f1f1f1;
+  background: var(--background-color);
   padding: 2rem 1rem;
   overflow-y: scroll;
   position: relative;
@@ -50,7 +50,7 @@ export const Card = styled(motion.div)`
   justify-content: space-around;
   border-radius: 1rem;
   overflow: hidden;
-  background: white;
+  background: var(--card-background);
   margin: 2rem 0rem;
   img {
     width: 8rem;
@@ -83,10 +83,9 @@ export const EmptyStyle = styled(motion.div)`
 
 export const Checkout = styled(motion.div)`
   button {
-    background: var(--primary);
+    background: var(--card-background);
     padding: 1rem 2rem;
     width: 100%;
-    color: white;
     margin-top: 2rem;
     cursor: pointer;
   }

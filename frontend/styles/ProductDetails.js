@@ -27,6 +27,10 @@ export const ProductInfo = styled.div`
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0rem;
+  }
   @media (max-width: 768px) {
     width: 100%;
     margin-top: 1rem;
@@ -54,13 +58,11 @@ export const Quantity = styled.div`
     color: var(--secondary);
   }
   svg {
-    color: #494949;
+    color: var(--secondary);
   }
 `;
 
 export const Buy = styled.button`
   width: 100%;
-  background: var(--primary);
-  color: white;
   font-weight: 500;
 `;
