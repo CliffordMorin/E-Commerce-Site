@@ -60,4 +60,28 @@ export const SwitchStyles = styled.label`
   @media (max-width: 768px) {
     display: none;
   }
+
+  h3 {
+    font-size: 0.75rem;
+  }
+
+  .sunIcon {
+    font-size: 1.5rem;
+    color: #f7db70;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+  }
+  .moonIcon {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .starsIcon {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 0.3rem;
+    margin-left: 0.2rem;
+  }
 `;

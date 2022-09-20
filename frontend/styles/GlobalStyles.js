@@ -15,16 +15,19 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0rem 7%;
   background: var(--background-color);
+  transition: all .5s ease;
 }
 
 h2 {
   font-size: 1.2rem;
   color: var(--primary);
+  transition: all 0.5s ease;
 }
 
 h3 {
   font-size: 1rem;
   color: var(--secondary);
+  transition: all 0.5s ease;
 }
 
 a {

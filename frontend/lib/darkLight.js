@@ -1,5 +1,5 @@
 const darkTheme = {
-  "--background-color": "#000",
+  "--background-color": "#26314B",
   "--primary": "#fff",
   "--secondary": "#ccc",
   "--text-color": "#fff",
@@ -12,7 +12,7 @@ const darkTheme = {
 };
 
 const lightTheme = {
-  "--background-color": "#f1f1f1",
+  "--background-color": "#C0DAB3",
   "--primary": "#2d2d2d",
   "--secondary": "#535353",
   "--text-color": "#000",
