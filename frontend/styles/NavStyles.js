@@ -50,3 +50,14 @@ export const NavItems = styled.div`
     pointer-events: none;
   }
 `;
+
+export const SwitchStyles = styled.label`
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;

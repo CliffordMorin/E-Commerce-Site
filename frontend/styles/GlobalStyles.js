@@ -1,7 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 :root {
-  --background-color: #f1f1f1;
-  --primary: #2d2d2d;
-  --secondary: #535353;
+  --background-color: ${(props) => props.theme["--background-color"]};
+  --primary: ${(props) => props.theme["--primary"]};
+  --secondary: ${(props) => props.theme["--secondary"]};
 }
 
 html,
@@ -38,3 +41,6 @@ a {
 p {
   line-height: 150%;
 }
+`;
+
+export default GlobalStyle;
