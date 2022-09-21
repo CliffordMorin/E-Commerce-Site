@@ -32,11 +32,18 @@ export const Order = styled.div`
 
 export const Wrapper = styled.div`
   button {
-    background: var(--primary);
     padding: 1rem 2rem;
     width: 50%;
-    color: white;
-    margin: 2rem;
+
+    margin-left: 16rem;
+    margin-bottom: 2rem;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    button {
+      margin: 0;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
   }
 `;
