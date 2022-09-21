@@ -8,10 +8,10 @@ export default function User() {
   const { user, error, isLoading } = useUser();
   if (!user) {
     return (
-      <div onClick={() => router.push("/api/auth/login")}>
+      <Profile onClick={() => router.push("/api/auth/login")}>
         <FaUserCircle size={30} />
         <h3>Profile</h3>
-      </div>
+      </Profile>
     );
   }
   return (
@@ -27,5 +27,9 @@ const Profile = styled.div`
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 16rem;
   }
 `;

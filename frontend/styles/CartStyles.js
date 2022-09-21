@@ -47,13 +47,14 @@ export const CartStyle = styled(motion.div)`
 export const Card = styled(motion.div)`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
   border-radius: 1rem;
   overflow: hidden;
   background: var(--card-background);
   margin: 2rem 0rem;
   img {
     width: 8rem;
+    margin-right: 2rem;
   }
 `;
 

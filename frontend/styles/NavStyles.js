@@ -10,6 +10,16 @@ export const NavStyles = styled.nav`
   a {
     font-size: 1.7rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    a {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
 `;
 
 export const NavItems = styled.div`
@@ -49,19 +59,24 @@ export const NavItems = styled.div`
     font-weight: 700;
     pointer-events: none;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+    margin-bottom: 0rem;
+
+    div {
+      margin-left: 0;
+      position: relative;
+    }
+  }
 `;
 
 export const SwitchStyles = styled.label`
   position: absolute;
   right: 0;
   margin-right: 2rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
-
-  @media (max-width: 768px) {
-    position: relative;
-    margin-right: 0;
-    margin-left: 2rem;
-  }
 
   h3 {
     font-size: 0.75rem;
@@ -92,5 +107,15 @@ export const SwitchStyles = styled.label`
     color: #fff;
     margin-top: 0.7rem;
     margin-left: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0.5rem;
+    right: -1rem;
+    h3 {
+      font-size: 0.6rem;
+      text-align: center;
+    }
   }
 `;
