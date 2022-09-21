@@ -20,7 +20,14 @@ body {
   margin: 0rem 7%;
   background: var(--background-color);
   transition: all .5s ease;
+
+  @media (max-width: 768px) {
+    margin: 0rem 2%;
+  }
 }
+
+
+
 h1{
   color: var()
 }
@@ -51,6 +58,7 @@ a {
 button{
   background: var(--card-background);
   color: var(--primary);
+  border: none;
 }
 
 p {

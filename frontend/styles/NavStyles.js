@@ -8,7 +8,7 @@ export const NavStyles = styled.nav`
   font-size: 1rem;
   color: var(--text-color-light);
   a {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 `;
 
@@ -58,7 +58,9 @@ export const SwitchStyles = styled.label`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    display: none;
+    position: relative;
+    margin-right: 0;
+    margin-left: 2rem;
   }
 
   h3 {
