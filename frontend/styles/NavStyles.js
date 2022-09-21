@@ -84,4 +84,11 @@ export const SwitchStyles = styled.label`
     margin-top: 0.3rem;
     margin-left: 0.2rem;
   }
+
+  .cloudyIcon {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 0.7rem;
+    margin-left: 0.5rem;
+  }
 `;

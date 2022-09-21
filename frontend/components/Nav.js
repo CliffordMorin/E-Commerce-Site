@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FiShoppingBag, FiSun } from "react-icons/fi";
 import { FaSun } from "react-icons/fa";
-import { BsMoonStarsFill } from "react-icons/bs";
+import { BsMoonStarsFill, BsCloudyFill } from "react-icons/bs";
 import { WiStars } from "react-icons/wi";
 import { NavStyles, NavItems, SwitchStyles } from "../styles/NavStyles";
 import Cart from "./Cart";
@@ -46,7 +46,7 @@ export default function Nav({ theme, setTheme }) {
           checkedHandleIcon={<BsMoonStarsFill className="moonIcon" />}
           uncheckedHandleIcon={<FaSun className="sunIcon" />}
           checkedIcon={<WiStars className="starsIcon" />}
-          uncheckedIcon={false}
+          uncheckedIcon={<BsCloudyFill className="cloudyIcon" />}
           offColor={"#73BDBB"}
           onColor={"#4D46BF"}
           offHandleColor={"#D8B55E"}

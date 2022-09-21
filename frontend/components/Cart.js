@@ -100,7 +100,7 @@ export default function Cart() {
               ease: "easeInOut",
             }}
           >
-            <h1>You have more shopping to do 😎</h1>
+            <h1>Cart Empty</h1>
             <FaShoppingCart />
           </EmptyStyle>
         )}
