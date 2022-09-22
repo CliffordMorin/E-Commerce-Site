@@ -22,8 +22,8 @@ export default function Profile({ user, orders }) {
   return (
     user && (
       <Wrapper>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <h2 className="userName">{user.name}</h2>
+        <p className="userEmail">{user.email}</p>
         <div>
           {orders.map((order) => (
             <Order key={order.id}>

@@ -89,6 +89,9 @@ export const Checkout = styled(motion.div)`
     width: 100%;
     margin-top: 2rem;
     cursor: pointer;
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
   }
 `;
 

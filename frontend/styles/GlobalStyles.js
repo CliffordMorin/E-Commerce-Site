@@ -59,6 +59,7 @@ button{
   background: var(--card-background);
   color: var(--primary);
   border: none;
+  cursor: pointer;
 }
 
 p {

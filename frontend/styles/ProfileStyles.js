@@ -31,6 +31,19 @@ export const Order = styled.div`
 `;
 
 export const Wrapper = styled.div`
+  .userName {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .userEmail {
+    font-size: 1rem;
+    font-weight: 300;
+
+    text-align: center;
+  }
   button {
     padding: 1rem 2rem;
     width: 50%;
@@ -39,10 +52,12 @@ export const Wrapper = styled.div`
     margin-bottom: 2rem;
     cursor: pointer;
   }
+
   @media (max-width: 768px) {
+    text-align: center;
     button {
       margin: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
       width: 100%;
     }
   }
