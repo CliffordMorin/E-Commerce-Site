@@ -6,6 +6,14 @@ import { useUser } from "@auth0/nextjs-auth0";
 export default function User() {
   const router = useRouter();
   const { user, error, isLoading } = useUser();
+
+  const formatInitials = (name) => {
+    const initials = name.match(/\b\w/g) || [];
+    return (
+      ((initials.shift() || "") + (initials.pop() || "")).toUpperCase() || ""
+    );
+  };
+
   if (!user) {
     return (
       <Profile onClick={() => router.push("/api/auth/login")}>
@@ -17,7 +25,7 @@ export default function User() {
   return (
     <Profile onClick={() => router.push("/profile")}>
       <img src={user.picture} alt={user.name} />
-      <h3>{user.name}</h3>
+      <h3>{formatInitials(user.name)}</h3>
     </Profile>
   );
 }
@@ -25,8 +33,8 @@ export default function User() {
 const Profile = styled.div`
   img {
     border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   @media (max-width: 768px) {
