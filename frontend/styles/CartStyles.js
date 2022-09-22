@@ -91,7 +91,7 @@ export const Checkout = styled(motion.div)`
     margin-top: 2rem;
     cursor: pointer;
     @media (max-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
   }
 `;
