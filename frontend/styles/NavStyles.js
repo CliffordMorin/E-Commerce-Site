@@ -43,6 +43,12 @@ export const NavItems = styled.div`
     cursor: pointer;
     font-size: 1.5rem;
   }
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    align-self: center;
+  }
   span {
     background: #ff2626;
     color: white;
