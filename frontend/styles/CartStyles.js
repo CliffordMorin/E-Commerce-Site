@@ -75,7 +75,8 @@ export const EmptyStyle = styled(motion.div)`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 80%;
+  width: 88%;
+  color: var(--secondary);
   svg {
     font-size: 8rem;
     color: var(--secondary);
