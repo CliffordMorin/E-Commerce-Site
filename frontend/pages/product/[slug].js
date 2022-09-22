@@ -55,7 +55,10 @@ export default function ProductDetails() {
     data.products.data[0].attributes;
 
   const notify = () =>
-    toast.success(`${title} added to cart`, { duration: 2000 });
+    toast.success(`${title} added to cart`, {
+      duration: 2000,
+      position: "bottom-left",
+    });
 
   return (
     <DetailsStyle>
