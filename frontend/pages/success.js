@@ -23,6 +23,8 @@ export async function getServerSideProps(params) {
 export default function Success({ order }) {
   const router = useRouter();
   console.log(order);
+  const address = order.customer_details.address;
+  const formatAddress = `${address.line1}, ${address.city}, ${address.state}, ${address.postal_code}`;
 
   return (
     <Wrapper>
@@ -37,21 +39,15 @@ export default function Success({ order }) {
         <h2>{order.customer_details.email}</h2>
         <InfoWrapper>
           <Address>
-            <h3>Address</h3>
-            {Object.entries(order.customer_details.address).map(
-              ([key, value]) => (
-                <p key={key}>
-                  {key}: {value}
-                </p>
-              )
-            )}
+            <h1>Shipping Address</h1>
+            <p>{formatAddress}</p>
           </Address>
 
           <OrderInfo>
-            <h3>Products</h3>
+            <h1>Products</h1>
             {order.line_items.data.map((item) => (
               <div key={item.id}>
-                <p>Product: {item.description}</p>
+                <h2>{item.description}</h2>
                 <p>Quantity: {item.quantity}</p>
                 <p>Price: {formatMoney(item.price.unit_amount)}</p>
               </div>
@@ -79,9 +75,10 @@ const Card = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  background: var(--card-background);
   border-radius: 2rem;
   padding: 3rem 3rem;
+  text-align: center;
   h1 {
     color: var(--primary);
     margin-bottom: 1rem;
@@ -91,15 +88,29 @@ const Card = styled(motion.div)`
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
+  h3{
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
   button {
     background: var(--primary);
-    color: white;
+    color: var(--card-background);
     font-weight: 500;
     font-size: 1.2rem;
     padding: 1rem 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     cursor: pointer;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+
+      &:hover {
+      background-color: grey;
+      transition: all 0.5s ease;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 `;
 const Address = styled.div`
@@ -117,5 +128,11 @@ const OrderInfo = styled.div`
 `;
 const InfoWrapper = styled.div`
   margin-top: 2rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;

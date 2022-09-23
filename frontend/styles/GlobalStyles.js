@@ -60,6 +60,7 @@ button{
   color: var(--primary);
   border: none;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 p {
