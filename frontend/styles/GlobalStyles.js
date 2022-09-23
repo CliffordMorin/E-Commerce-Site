@@ -29,7 +29,7 @@ body {
 
 
 h1{
-  color: var()
+  
 }
 h2 {
   font-size: 1.2rem;

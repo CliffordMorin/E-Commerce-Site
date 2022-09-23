@@ -3,6 +3,8 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Product from "../components/Products";
 import { Gallery } from "../styles/Gallery";
+import { SkeletonLoader } from "../lib/SkeletonLoader.js";
+import toast from "react-hot-toast";
 
 export default function Home() {
   //Fetch products from the strapi API
@@ -10,7 +12,9 @@ export default function Home() {
   const { data, fetching, error } = results;
 
   //check for the data coming in
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) {
+    return <SkeletonLoader />;
+  }
   if (error) return <p>Error : {error.message}</p>;
   const products = data.products.data;
 

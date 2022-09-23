@@ -11,6 +11,7 @@ import {
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../../lib/context";
 import toast from "react-hot-toast";
+import { DetailSkeletonLoader } from "../../lib/SkeletonLoader.js";
 
 export default function ProductDetails() {
   //Use StateContext to get the qty
@@ -47,7 +48,7 @@ export default function ProductDetails() {
   const { data, error, fetching } = results;
 
   //check for the data coming in
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <DetailSkeletonLoader />;
   if (error) return <p>Error : {error.message}</p>;
 
   //Extract Data from the GraphQL data
