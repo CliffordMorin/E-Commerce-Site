@@ -59,6 +59,10 @@ export default function ProductDetails() {
     toast.success(`${title} added to cart`, {
       duration: 2000,
       position: "bottom-left",
+      style: {
+        background: "var(--card-background)",
+        color: "var(--primary)",
+      },
     });
 
   return (

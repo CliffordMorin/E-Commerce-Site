@@ -10,6 +10,7 @@ import { useStateContext } from "../lib/context";
 import User from "./User";
 import { useUser } from "@auth0/nextjs-auth0";
 import Switch from "react-switch";
+import toast from "react-hot-toast";
 
 const { AnimatePresence, motion } = require("framer-motion");
 
@@ -23,12 +24,32 @@ export default function Nav({ theme, setTheme }) {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
+  const toastInfo = () => {
+    toast(
+      "Use the credit card 4242 4242 4242 4242 for testing when buying products",
+      {
+        position: "top-center",
+        style: {
+          color: "var(--primary)",
+          background: "var(--card-background)",
+        },
+        icon: "👋",
+        duration: 6000,
+      }
+    );
+  };
+
   return (
     <NavStyles>
       <Link href={"/"}>uShop.</Link>
       <NavItems>
         <User />
-        <div onClick={() => setShowCart(true)}>
+        <div
+          onClick={() => {
+            toastInfo();
+            setShowCart(true);
+          }}
+        >
           {totalQuantities > 0 && (
             <motion.span animate={{ scale: 1 }} initial={{ scale: 0 }}>
               {totalQuantities}
