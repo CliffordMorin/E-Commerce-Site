@@ -54,7 +54,13 @@ export default function Success({ order }) {
             ))}
           </OrderInfo>
         </InfoWrapper>
-        <button onClick={() => router.push("/")}>Continue Shopping</button>
+        <KeepShoppingBtn
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => router.push("/")}
+        >
+          Continue Shopping
+        </KeepShoppingBtn>
         <Image
           responsive
           height={200}
@@ -69,6 +75,9 @@ export default function Success({ order }) {
 
 const Wrapper = styled.div`
   margin: 1rem 5rem;
+  @media (max-width: 768px) {
+    margin: 1rem 1rem;
+  }
 `;
 
 const Card = styled(motion.div)`
@@ -88,31 +97,26 @@ const Card = styled(motion.div)`
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-  h3{
+  h3 {
     color: var(--primary);
     font-weight: 500;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
   }
-  button {
-    background: var(--primary);
-    color: var(--card-background);
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    border-radius: 1rem;
-    transition: all 0.5s ease;
-
-      &:hover {
-      background-color: grey;
-      transition: all 0.5s ease;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
 `;
+
+const KeepShoppingBtn = styled(motion.button)`
+  background: var(--primary);
+  color: var(--card-background);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+`;
+
 const Address = styled.div`
   font-size: 1rem;
   width: 100%;

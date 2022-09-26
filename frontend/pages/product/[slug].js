@@ -82,6 +82,8 @@ export default function ProductDetails() {
           </button>
         </Quantity>
         <Buy
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => {
             addToCart(data.products.data[0].attributes, qty);
             notify();

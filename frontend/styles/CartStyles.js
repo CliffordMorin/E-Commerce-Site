@@ -83,23 +83,17 @@ export const EmptyStyle = styled(motion.div)`
   }
 `;
 
-export const Checkout = styled(motion.div)`
-  button {
-    background: var(--card-background);
-    padding: 1rem 2rem;
-    width: 100%;
-    margin-top: 2rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    &:hover {
-      background-color: grey;
-      transition: all 0.5s ease;
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    @media (max-width: 768px) {
-      margin-bottom: 4rem;
-    }
+export const Checkout = styled(motion.div)``;
+
+export const CheckoutBtn = styled(motion.button)`
+  background: var(--card-background);
+  padding: 1rem 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  @media (max-width: 768px) {
+    margin-bottom: 4rem;
   }
 `;
 

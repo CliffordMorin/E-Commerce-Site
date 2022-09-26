@@ -1,4 +1,4 @@
-import { ProductStyle } from "../styles/ProductStyle";
+import { ProductStyle, ProductImg } from "../styles/ProductStyle";
 import Link from "next/link";
 
 export default function Products({ product }) {
@@ -8,7 +8,12 @@ export default function Products({ product }) {
     <ProductStyle>
       <Link href={`product/${slug}`}>
         <div>
-          <img src={image.data.attributes.formats.small.url} alt="" />
+          <ProductImg
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.9 }}
+            src={image.data.attributes.formats.small.url}
+            alt=""
+          />
         </div>
       </Link>
       <h2>{title}</h2>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const DetailsStyle = styled.div`
   display: flex;
@@ -74,15 +75,10 @@ export const Quantity = styled.div`
   }
 `;
 
-export const Buy = styled.button`
+export const Buy = styled(motion.button)`
   width: 100%;
   font-size: 1.5rem;
-  &:hover {
-    background-color: grey;
-    transition: all 0.5s ease;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
+
   @media (max-width: 768px) {
     margin-bottom: 3rem;
   }

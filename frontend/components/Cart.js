@@ -8,6 +8,7 @@ import {
   Checkout,
   Cards,
   ExitOut,
+  CheckoutBtn,
 } from "../styles/CartStyles.js";
 import { Quantity } from "../styles/ProductDetails";
 import { FaShoppingCart } from "react-icons/fa";
@@ -136,7 +137,13 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <Checkout layout>
             <h3>Subtotal: ${totalPrice.toFixed(2)}</h3>
-            <button onClick={handleCheckout}>Purchase</button>
+            <CheckoutBtn
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleCheckout}
+            >
+              Purchase
+            </CheckoutBtn>
           </Checkout>
         )}
       </CartStyle>
