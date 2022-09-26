@@ -4,7 +4,13 @@ import { FiShoppingBag, FiSun } from "react-icons/fi";
 import { FaSun } from "react-icons/fa";
 import { BsMoonStarsFill, BsCloudyFill } from "react-icons/bs";
 import { WiStars } from "react-icons/wi";
-import { NavStyles, NavItems, SwitchStyles } from "../styles/NavStyles";
+import { AiOutlineClose } from "react-icons/ai";
+import {
+  NavStyles,
+  NavItems,
+  SwitchStyles,
+  ToastBtn,
+} from "../styles/NavStyles";
 import Cart from "./Cart";
 import { useStateContext } from "../lib/context";
 import User from "./User";
@@ -26,7 +32,22 @@ export default function Nav({ theme, setTheme }) {
 
   const toastInfo = () => {
     toast(
-      "Use the credit card 4242 4242 4242 4242 for testing when buying products",
+      (t) => (
+        <div>
+          <p className="toast__text">
+            Use the credit card 4242 4242 4242 4242 for testing when buying
+            products.
+          </p>
+          <ToastBtn
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="toast__button"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            <AiOutlineClose />
+          </ToastBtn>
+        </div>
+      ),
       {
         position: "top-center",
         style: {
@@ -34,7 +55,7 @@ export default function Nav({ theme, setTheme }) {
           background: "var(--card-background)",
         },
         icon: "👋",
-        duration: 6000,
+        duration: 4000,
       }
     );
   };

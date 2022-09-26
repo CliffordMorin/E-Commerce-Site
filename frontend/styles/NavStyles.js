@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const NavStyles = styled.nav`
   min-height: 15vh;
@@ -125,4 +126,16 @@ export const SwitchStyles = styled.label`
       text-align: center;
     }
   }
+`;
+
+export const ToastBtn = styled(motion.button)`
+  background: var(--primary);
+  color: var(--card-background);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
 `;
