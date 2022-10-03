@@ -57,8 +57,8 @@ export default function ProductDetails() {
 
   const notify = () =>
     toast.success(`${title} added to cart`, {
-      duration: 2000,
-      position: "bottom-left",
+      duration: 1200,
+      position: "top-center",
       style: {
         background: "var(--card-background)",
         color: "var(--primary)",
