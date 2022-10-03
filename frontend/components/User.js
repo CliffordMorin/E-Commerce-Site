@@ -2,6 +2,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { useUser } from "@auth0/nextjs-auth0";
+import { motion } from "framer-motion";
 
 export default function User() {
   const router = useRouter();
@@ -16,7 +17,11 @@ export default function User() {
 
   if (!user) {
     return (
-      <Profile onClick={() => router.push("/api/auth/login")}>
+      <Profile
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => router.push("/api/auth/login")}
+      >
         <FaUserCircle size={30} />
         <h3>Profile</h3>
       </Profile>
@@ -30,7 +35,7 @@ export default function User() {
   );
 }
 
-const Profile = styled.div`
+const Profile = styled(motion.div)`
   img {
     border-radius: 50%;
     width: 2rem;

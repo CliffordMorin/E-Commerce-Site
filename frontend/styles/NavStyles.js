@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const NavStyles = styled.nav`
+export const NavStyles = styled(motion.nav)`
   min-height: 15vh;
   display: flex;
   justify-content: space-between;
@@ -79,6 +79,8 @@ export const NavItems = styled.div`
   }
 `;
 
+export const CartLogo = styled(motion.div)``;
+
 export const SwitchStyles = styled.label`
   position: absolute;
   right: 0;
@@ -129,13 +131,29 @@ export const SwitchStyles = styled.label`
 `;
 
 export const ToastBtn = styled(motion.button)`
-  background: var(--primary);
-  color: var(--card-background);
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 2rem;
+  background: none;
+
+  font-size: 2.5rem;
   font-weight: 700;
   cursor: pointer;
   outline: none;
+  grid-area: button;
+  svg {
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    color: var(--secondary);
+  }
+`;
+
+export const ToastStyles = styled(motion.div)`
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "text button";
+
+  p {
+    grid-area: text;
+    border-right: 0.1rem solid var(--secondary);
+    color: var(--primary);
+  }
 `;

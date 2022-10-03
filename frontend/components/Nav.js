@@ -4,12 +4,14 @@ import { FiShoppingBag, FiSun } from "react-icons/fi";
 import { FaSun } from "react-icons/fa";
 import { BsMoonStarsFill, BsCloudyFill } from "react-icons/bs";
 import { WiStars } from "react-icons/wi";
-import { AiOutlineClose } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
 import {
   NavStyles,
   NavItems,
   SwitchStyles,
   ToastBtn,
+  ToastStyles,
+  CartLogo,
 } from "../styles/NavStyles";
 import Cart from "./Cart";
 import { useStateContext } from "../lib/context";
@@ -33,20 +35,19 @@ export default function Nav({ theme, setTheme }) {
   const toastInfo = () => {
     toast(
       (t) => (
-        <div>
-          <p className="toast__text">
-            Use the credit card 4242 4242 4242 4242 for testing when buying
+        <ToastStyles>
+          <p>
+            Use credit card # 4242 4242 4242 4242 for testing when buying
             products.
           </p>
           <ToastBtn
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="toast__button"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.85 }}
             onClick={() => toast.dismiss(t.id)}
           >
-            <AiOutlineClose />
+            <IoClose />
           </ToastBtn>
-        </div>
+        </ToastStyles>
       ),
       {
         position: "top-center",
@@ -54,8 +55,7 @@ export default function Nav({ theme, setTheme }) {
           color: "var(--primary)",
           background: "var(--card-background)",
         },
-        icon: "👋",
-        duration: 4000,
+        duration: 8000,
       }
     );
   };
@@ -65,7 +65,9 @@ export default function Nav({ theme, setTheme }) {
       <Link href={"/"}>uShop.</Link>
       <NavItems>
         <User />
-        <div
+        <CartLogo
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => {
             toastInfo();
             setShowCart(true);
@@ -78,7 +80,7 @@ export default function Nav({ theme, setTheme }) {
           )}
           <FiShoppingBag />
           <h3>Cart</h3>
-        </div>
+        </CartLogo>
       </NavItems>
       <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
       <SwitchStyles>

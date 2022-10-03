@@ -22,7 +22,7 @@ export const ExitOut = styled(motion.div)`
   position: relative;
   right: 15px;
   bottom: 25px;
-
+  cursor: pointer;
   svg {
     font-size: 3rem;
     color: var(--secondary);

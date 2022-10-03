@@ -83,7 +83,11 @@ export default function Cart() {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <ExitOut onClick={() => setShowCart(false)}>
+        <ExitOut
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.85 }}
+          onClick={() => setShowCart(false)}
+        >
           <IoClose />
         </ExitOut>
         {cartItems.length < 1 && (
