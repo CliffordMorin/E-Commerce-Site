@@ -41,22 +41,29 @@ export const Wrapper = styled.div`
   .userEmail {
     font-size: 1rem;
     font-weight: 300;
-
     text-align: center;
-  }
-  button {
-    padding: 1rem 2rem;
-    width: 50%;
-
-    margin-left: 16rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
   }
 
   @media (max-width: 768px) {
     text-align: center;
+  }
+`;
+
+export const LogoutBtnWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  button {
+    background: var(--card-background);
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    font-size: 1.3rem;
+    width: 20%;
+    margin: 1rem auto;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
     button {
-      margin: 0;
       margin-bottom: 3rem;
       width: 100%;
     }

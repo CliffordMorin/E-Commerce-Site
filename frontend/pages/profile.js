@@ -4,7 +4,8 @@ import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import formatMoney from "../lib/formatMoney";
 import formatTimeStamp from "../lib/formatTimeStamp";
-import { Wrapper, Order } from "../styles/ProfileStyles";
+import { Wrapper, Order, LogoutBtnWrapper } from "../styles/ProfileStyles";
+import { motion } from "framer-motion";
 
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
@@ -42,7 +43,15 @@ export default function Profile({ user, orders }) {
             </Order>
           ))}
         </div>
-        <button onClick={() => router.push("/api/auth/logout")}>Logout</button>
+        <LogoutBtnWrapper>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.85 }}
+            onClick={() => router.push("/api/auth/logout")}
+          >
+            Logout
+          </motion.button>
+        </LogoutBtnWrapper>
       </Wrapper>
     )
   );
